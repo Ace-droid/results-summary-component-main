@@ -1,0 +1,220 @@
+
+/*colors*/
+:root{
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobolt-blue: hsl(234, 85%, 45%);
+  --pale-red: rgb(254, 243, 243);
+  --pale-yellow:hsl(40, 60%, 93%);
+  --plae-green:hsl(162, 42%, 95%);
+  --op-blue:hsl(234, 50%, 96%);
+ 
+
+
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --voilet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+ --white: hsl(0, 0%, 100%);
+ --pale-blue: hsl(221, 100%, 96%);
+ --light-lavinder: hsl(241, 100%, 89%);
+ --dark-greyblue: hsl(224, 30%, 27%);
+
+ --ff-primary: 'Hanken Grotesk', sans-serif; 
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+   box-sizing: border-box;
+ }
+ /*
+   2. Remove default margin
+ */
+ * {
+   margin: 0;
+ }
+ /*
+   Typographic tweaks!
+   3. Add accessible line-height
+   4. Improve text rendering
+ */
+ body {
+   line-height: 1.5;
+   -webkit-font-smoothing: antialiased;
+   font-family: var(--ff-primary);
+ }
+ /*
+   5. Improve media defaults
+ */
+ img, picture, video, canvas, svg {
+   display: block;
+   max-width: 100%;
+ }
+ /*
+   6. Remove built-in form typography styles
+ */
+ input, button, textarea, select {
+   font: inherit;
+ }
+ /*
+   7. Avoid text overflows
+ */
+ p, h1, h2, h3, h4, h5, h6 {
+   overflow-wrap: break-word;
+ }
+ /*
+   8. Create a root stacking context
+ */
+ #root, #__next {
+   isolation: isolate;
+ }
+
+.body{
+  font-family: var(--ff-primary);
+}
+.results{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-image: linear-gradient(var(--light-slate-blue), var(--light-royal-blue) );
+  color: white;
+  padding: 2.5rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius:2rem;
+}
+.grid{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.grid[data-spacing = "large" ]{
+  gap: 2rem;
+}
+.header{
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: var(--light-lavinder);
+  text-transform: capitalize;
+
+}
+.result-num{
+  background-image: linear-gradient(var(--voilet-blue), var(--persian-blue));
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.1;
+}
+.num1{
+  font-size: 5rem;
+  font-weight: 800;
+ 
+}
+.num1 span{
+  display: block;
+  font-size: .8rem;
+  font-weight: 100;
+  color: var(--light-slate-blue);
+  font-size: 1rem;
+}
+.result-para{
+  display: flex;
+  flex-direction: column;
+  
+}
+.para1{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.para2{
+  font-size: 1rem;
+  color: var(--light-lavinder);
+  max-width: 18rem;
+}
+.result-summary{
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.summary-header{
+  font-size: 1.2rem;
+}
+.summary-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: blue;
+}
+.summary-item[data-item-type="accent-2"]{
+  background-color: var(--pale-yellow);
+  color: var(--orangey-yellow);
+} 
+.summary-item[data-item-type="accent-3"]{
+  background-color: var(--plae-green);
+  color: var(--green-teal);
+} 
+.summary-item[data-item-type="accent-4"]{
+  background-color: var(--pale-blue);
+  color: var(--cobolt-blue);
+} 
+.summary-item[data-item-type="accent-1"]{
+  background-color: var(--pale-red);
+  color: var(--light-red);
+} 
+.flex{
+  display: flex;
+  gap: .5rem;
+}
+.flex p{
+  font-weight: 550;
+}
+.btn{
+  background-color: var(--dark-greyblue);
+  border-radius: 100vw;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+}
+.btn:hover{
+  background-color: var(--light-royal-blue);
+  cursor: pointer;
+}
+.fade{
+  color: var(--light-lavinder);
+}
+.num{
+  color: var(--dark-greyblue);
+  font-weight: 550;
+}
+
+
+@media (min-width: 600px){
+  .container{
+    display: flex;
+    max-width: 62rem;
+    margin-inline: auto;
+    justify-content: center;
+    box-shadow: 9px 10px 14px -4px rgba(0,0,0,0.19);
+    margin-top: 2rem;
+    border-radius: 2rem;
+  }
+  .container > *{
+    flex-basis: 100%;
+  }
+  .results{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+
+}
+
+
